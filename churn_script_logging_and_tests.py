@@ -72,7 +72,7 @@ def test_eda(perform_eda):
         assert exists('./images/customer_age_histogram.png')
         assert exists('./images/marital_status_counts.png')
         logger.info("Testing perform_eda: SUCCESS")
-        
+
     except AssertionError as err:
         logger.error(
             "Testing perform_eda: FAILED!")
@@ -123,7 +123,7 @@ def test_encoder_helper(encoder_helper):
         df_local = encoder_helper(df_local, cat_columns, quant_columns)
         assert df_local.shape[0] == 10127
         logger.info("Testing encoder_helper: SUCCESS")
-        
+
     except AssertionError as err:
         logger.error("Testing encoder_helper: FAILED!")
         raise err
@@ -174,9 +174,10 @@ def test_perform_feature_engineering(perform_feature_engineering):
 
     try:
         x_train, x_test, y_train, y_test = cl.perform_feature_engineering(df_local, None)
-        assert x_train.shape[0] == 7088
+        assert x_train.shape[0] and y_train.shape[0] == 7088 \
+            and x_test.shape[0] and y_test.shape[0] == 3039
         logger.info("Testing perform_feature_engineering: SUCCESS")
-        
+
     except AssertionError as err:
         logger.error("Testing perform_feature_engineering: FAILED!")
         raise err
@@ -232,7 +233,7 @@ def test_train_models(train_models):
         assert exists('models/logistic_model.pkl')
         assert exists('models/rfc_model.pkl')
         logger.info("Testing train_models: SUCCESS")
-        
+
     except AssertionError as err:
         logger.error("Testing train_models: FAILED!")
         raise err

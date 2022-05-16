@@ -129,5 +129,12 @@ churn_script_logging_and_tests.py .....                                         
 =========================================== 5 passed, 4 warnings in 3.00s ===========================================
 ```
 
+#### Checking code for cleanliness.
+```
+pylint churn_library.py
+```
 
+#### After acheiving a high score with `pylint` run `autopep8` to format.
+```
+autopep8 --in-place --aggressive --aggressive <source-file>.py
 

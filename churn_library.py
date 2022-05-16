@@ -105,8 +105,8 @@ def encoder_helper(data_frame, category_lst, response):
     input:
             data_frame: pandas dataframe
             category_lst: list of columns that contain categorical features
-            response: string of response name [optional argument that could be 
-                      used for naming variables or index y column]
+            response: string of response name [optional argument that could be
+            used for naming variables or index y column]
 
     output:
             data_frame: pandas dataframe with new columns for
@@ -127,8 +127,8 @@ def perform_feature_engineering(data_frame, response):
     '''
     input:
               data_frame: pandas dataframe
-              response: string of response name [optional argument that could be 
-                        used for naming variables or index y column]
+              response: string of response name [optional argument that could be
+              used for naming variables or index y column]
 
     output:
               X_train: X training data
