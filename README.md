@@ -3,11 +3,12 @@
 - Project **Predict Customer Churn** of ML DevOps Engineer Nanodegree Udacity
 
 ## Project Description
-Your project description here.
+This project consists of (2) python scripts that train, test and run scikit-learn
+models used to prodict customer churn from sample data.
 
-## Files and data description
-Overview of the relavent files 
+## File and directory structure
 
+```
 ├── README.md                              This file
 ├── churn_library.py                       Library of refactored functions
 ├── churn_script_logging_and_tests.py      Unit tests for the functions defined above
@@ -16,7 +17,7 @@ Overview of the relavent files
 ├── images                                 Plots and graphs
 ├── logs                                   Log files
 ├── models                                 Model artifacts
-
+```
 
 ## Development Environment
 
