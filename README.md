@@ -12,7 +12,7 @@ both scripts.
 
 This python source files include functions refactored from the original code along with logging and unit testing.
 
-The programs are typically run from the command-line interface (CLI). To run the scripts, jump to the [running](##running) section.
+The programs are typically run from the command-line interface (CLI). To run the scripts, jump to the [running](##running-the-python-scripts) section.
 
 ## File and directory structure
 
