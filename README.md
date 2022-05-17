@@ -75,7 +75,7 @@ models
 
 After the model is trained (several minutes) and saved a summary report should be displayed.
 
-Example
+Example Output
 ```
 random forest results
 test results
@@ -87,37 +87,6 @@ test results
     accuracy                           0.96      3039
    macro avg       0.95      0.90      0.92      3039
 weighted avg       0.96      0.96      0.96      3039
-
-train results
-              precision    recall  f1-score   support
-
-           0       1.00      1.00      1.00      5957
-           1       1.00      1.00      1.00      1131
-
-    accuracy                           1.00      7088
-   macro avg       1.00      1.00      1.00      7088
-weighted avg       1.00      1.00      1.00      7088
-
-logistic regression results
-test results
-              precision    recall  f1-score   support
-
-           0       0.90      0.96      0.93      2543
-           1       0.71      0.45      0.55       496
-
-    accuracy                           0.88      3039
-   macro avg       0.81      0.71      0.74      3039
-weighted avg       0.87      0.88      0.87      3039
-
-train results
-              precision    recall  f1-score   support
-
-           0       0.91      0.96      0.94      5957
-           1       0.72      0.50      0.59      1131
-
-    accuracy                           0.89      7088
-   macro avg       0.82      0.73      0.76      7088
-weighted avg       0.88      0.89      0.88      7088
 ```
 
 ### Testing
