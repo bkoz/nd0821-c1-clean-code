@@ -4,6 +4,8 @@
 
 ### Project Description
 
+Course #1: Writing Clean Code
+
 This project refactors an existing code base written in a jupyter notebook. The original notebook code identifies credit card customers that are most likely to churn based on data from Kaggle. The completed project includes a Python package for a machine learning project that follows coding (PEP8) and engineering best practices for implementing software (modular, documented, and tested). 
 
 This project consists of (2) python source scripts that train, test and run scikit-learn
