@@ -3,8 +3,16 @@
 - Project **Predict Customer Churn** of ML DevOps Engineer Nanodegree Udacity
 
 ## Project Description
-This project consists of (2) python scripts that train, test and run scikit-learn
-models used to prodict customer churn from sample data.
+
+This project implements refactoring an existing code base written in a jupyter notebook. The original program identifies credit card customers that are most likely to churn based on a data from Kaggle. The completed project will include a Python package for a machine learning project that follows coding (PEP8) and engineering best practices for implementing software (modular, documented, and tested). 
+
+This project consists of (2) python scripts that train, test, run scikit-learn
+models used to prodict customer churn from sample data. Logging is incorporated to
+both scripts.
+
+This python source files include functions refactored from the original code along with logging and unit testing.
+
+The programs are typically run from the command-line interface (CLI). To run the scripts, jump to the [running](#running) section.
 
 ## File and directory structure
 
