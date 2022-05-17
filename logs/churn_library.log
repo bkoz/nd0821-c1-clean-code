@@ -1,0 +1,14 @@
+root : INFO : import_data : SUCCESS
+root : INFO : perform_eda: churn histogram : SUCCESS
+root : INFO : perform_eda: customer_age histogram : SUCCESS
+root : INFO : perform_eda: plot marital status counts : SUCCESS
+root : INFO : perform_eda: plot total transaction histogram : SUCCESS
+root : INFO : perform_eda: plot heatmap : SUCCESS
+root : INFO : encoder_helper: SUCCESS
+root : INFO : train_models: GridSearch : Running
+root : INFO : train_models: GridSearch : SUCCESS : 153.718460 secs
+root : INFO : train_models: Logistic Regression : Running
+root : INFO : train_models: Logistic Regression : SUCCESS : 0.073173 secs
+root : INFO : classification_report_image: random forest : SUCCESS
+root : INFO : classification_report_image: logistic regression : SUCCESS
+root : INFO : feature_importance_plot: saved feature report to  : ./images/results/cv_feature_importance.png

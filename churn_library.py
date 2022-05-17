@@ -1,6 +1,14 @@
 # library doc string
 '''
-Churn library.
+File: churn_library.py
+Description: A collection of functions that train, test and run scikit-learn
+models used to prodict customer churn from sample data.
+
+Author: bkozdemba@gmail.com
+Date: May 2022
+
+Usage:
+$ python churn_library.py --log-file=logs/churn_library.log --log-level=INFO
 '''
 
 # import libraries
@@ -63,19 +71,19 @@ def perform_eda(data_frame):
     # Plot a Churn histogram.
     plt.figure(figsize=(20, 10))
     data_frame['Churn'].hist()
-    plt.savefig("./images/churn_histogram.png")
+    plt.savefig("./images/results/churn_histogram.png")
     logging.info("%s : %s", "perform_eda: churn histogram", "SUCCESS")
 
     # Plot a Customer_Age histogram.
     plt.figure(figsize=(20, 10))
     data_frame['Customer_Age'].hist()
-    plt.savefig("./images/customer_age_histogram.png")
+    plt.savefig("./images/results/customer_age_histogram.png")
     logging.info("%s : %s", "perform_eda: customer_age histogram", "SUCCESS")
 
     # Plot the marital status counts.
     plt.figure(figsize=(20, 10))
     data_frame.Marital_Status.value_counts('normalize').plot(kind='bar')
-    plt.savefig("./images/marital_status_counts.png")
+    plt.savefig("./images/results/marital_status_counts.png")
     logging.info(
         "%s : %s",
         "perform_eda: plot marital status counts",
@@ -84,7 +92,7 @@ def perform_eda(data_frame):
     # Plot the total transaction histogram.
     plt.figure(figsize=(20, 10))
     sns.histplot(data_frame['Total_Trans_Ct'], stat='density', kde=True)
-    plt.savefig("./images/total_transaction_histogram.png")
+    plt.savefig("./images/results/total_transaction_histogram.png")
     logging.info(
         "%s : %s",
         "perform_eda: plot total transaction histogram",
@@ -93,7 +101,7 @@ def perform_eda(data_frame):
     # Plot the heat map.
     plt.figure(figsize=(20, 10))
     sns.heatmap(data_frame.corr(), annot=False, cmap='Dark2_r', linewidths=2)
-    plt.savefig("./images/heatmap.png")
+    plt.savefig("./images/results/heatmap.png")
     logging.info("%s : %s", "perform_eda: plot heatmap", "SUCCESS")
 
 
@@ -175,7 +183,7 @@ def classification_report_image(y_train,
                                 y_test_preds_rf):
     '''
     produces classification report for training and testing results and stores report as image
-    in images folder
+    in images/results folder
     input:
             y_train: training response values
             y_test:  test response values
@@ -202,7 +210,7 @@ def classification_report_image(y_train,
     plt.text(0.01, 0.7, str(classification_report(y_train, y_train_preds_rf)), {
              'fontsize': 10}, fontproperties='monospace')  # approach improved by OP -> monospace!
     plt.axis('off')
-    plt.savefig("./images/rf_classification_report.png")
+    plt.savefig("./images/results/rf_classification_report.png")
     logging.info(
         "%s : %s",
         "classification_report_image: random forest",
@@ -221,7 +229,7 @@ def classification_report_image(y_train,
     plt.text(0.01, 0.7, str(classification_report(y_test, y_test_preds_lr)), {
              'fontsize': 10}, fontproperties='monospace')  # approach improved by OP -> monospace!
     plt.axis('off')
-    plt.savefig("./images/lr_classification_report.png")
+    plt.savefig("./images/results/lr_classification_report.png")
     logging.info(
         "%s : %s",
         "classification_report_image: logistic regression",
@@ -351,7 +359,7 @@ def train_models(x_train, x_test, y_train, y_test):
     feature_importance_plot(
         cv_rfc,
         x_train,
-        './images/cv_feature_importance.png')
+        './images/results/cv_feature_importance.png')
 
 
 if __name__ == "__main__":
