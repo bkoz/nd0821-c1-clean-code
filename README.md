@@ -1,8 +1,8 @@
 # Predict Customer Churn
 
-- Project **Predict Customer Churn** of ML DevOps Engineer Nanodegree Udacity
+## ML DevOps Engineer Nanodegree Udacity
 
-## Project Description
+### Project Description
 
 This project refactors an existing code base written in a jupyter notebook. The original notebook code identifies credit card customers that are most likely to churn based on data from Kaggle. The completed project includes a Python package for a machine learning project that follows coding (PEP8) and engineering best practices for implementing software (modular, documented, and tested). 
 
@@ -14,7 +14,7 @@ The python source files include refactored functions from the original code alon
 
 The programs are typically run from the command-line interface (CLI). To run the scripts, jump to the [running](#running-the-python-scripts) section.
 
-## File and directory structure
+### File and directory structure
 
 ```
 ├── README.md                              This file
@@ -27,7 +27,7 @@ The programs are typically run from the command-line interface (CLI). To run the
 ├── models                                 Model artifacts
 ```
 
-## Development Environment
+### Development Environment
 
 - Apple Silicon M1 MacBookAir
 - MacOS Monterey 12.3.1
@@ -44,7 +44,7 @@ The following manual steps were used to create the Conda environment.
 conda create --name=ml-devops-eng python=3.8 shap scikit-learn joblib pandas numpy matplotlib seaborn pylint autopep8 jupyterlab
 ```
 
-## Running the python scripts
+### Running the python scripts
 
 The main churn code script can be run using the following command. This may take several minutes to complete. 
 To watch the progress run `tail -f logs/churn_library.log` in a separate terminal.
@@ -140,6 +140,8 @@ churn_script_logging_and_tests.py .....                                         
 =========================================== 5 passed, 4 warnings in 3.00s ===========================================
 ```
 
+### Clean Code 
+
 #### Checking code for cleanliness.
 ```
 pylint churn_library.py
@@ -147,5 +149,5 @@ pylint churn_library.py
 
 #### After acheiving a high score with `pylint` run `autopep8` to format.
 ```
-autopep8 --in-place --aggressive --aggressive <source-file>.py
+autopep8 --in-place --aggressive --aggressive churn_library.py
 
