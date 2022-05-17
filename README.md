@@ -23,6 +23,8 @@ models used to prodict customer churn from sample data.
 
 - Apple Silicon M1 MacBookAir
 - MacOS Monterey 12.3.1
+- conda 4.11.0
+- Python 3.8.13 
 
 ### Installation
 
