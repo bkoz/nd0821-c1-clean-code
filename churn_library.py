@@ -22,7 +22,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.metrics import roc_curve
-from sklearn.metrics import RocCurveDisplay
+# from sklearn.metrics import RocCurveDisplay
 from sklearn.metrics import plot_roc_curve
 import pandas as pd
 import matplotlib.pyplot as plt
