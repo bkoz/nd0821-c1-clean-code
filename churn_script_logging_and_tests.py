@@ -1,8 +1,9 @@
 """
 File: churn_script_logging_and_tests.py
 Description: Python script that define unit test for the churn_library.py functions.
+
 Author: bkozdemba@gmail.com
-Date: May 2022
+Creation Date: May 17, 2022
 
 Usage:
 $ pytest churn_script_logging_and_tests.py --log-file=logs/churn_library.log --log-level=INFO

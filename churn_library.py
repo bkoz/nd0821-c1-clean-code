@@ -5,7 +5,7 @@ Description: A collection of functions that train, test and run scikit-learn
 models used to prodict customer churn from sample data.
 
 Author: bkozdemba@gmail.com
-Date: May 2022
+Creation Date: May 17, 2022
 
 Usage:
 $ python churn_library.py --log-file=logs/churn_library.log --log-level=INFO
