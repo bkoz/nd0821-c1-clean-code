@@ -6,9 +6,9 @@ root : INFO : perform_eda: plot total transaction histogram : SUCCESS
 root : INFO : perform_eda: plot heatmap : SUCCESS
 root : INFO : encoder_helper: SUCCESS
 root : INFO : train_models: GridSearch : Running
-root : INFO : train_models: GridSearch : SUCCESS : 155.295458 secs
+root : INFO : train_models: GridSearch : SUCCESS : 153.381094 secs
 root : INFO : train_models: Logistic Regression : Running
-root : INFO : train_models: Logistic Regression : SUCCESS : 0.078163 secs
+root : INFO : train_models: Logistic Regression : SUCCESS : 0.067101 secs
 root : INFO : classification_report_image: random forest : SUCCESS
 root : INFO : classification_report_image: logistic regression : SUCCESS
 root : INFO : feature_importance_plot: saved feature report to  : ./images/results/cv_feature_importance.png
