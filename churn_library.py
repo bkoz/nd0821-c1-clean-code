@@ -12,6 +12,7 @@ $ python churn_library.py --log-file=logs/churn_library.log --log-level=INFO
 '''
 
 # import libraries
+from asyncio.log import logger
 import os
 import logging
 import time
@@ -20,6 +21,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
+from sklearn.metrics import roc_curve
+from sklearn.metrics import RocCurveDisplay
+from sklearn.metrics import plot_roc_curve
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -71,19 +75,19 @@ def perform_eda(data_frame):
     # Plot a Churn histogram.
     plt.figure(figsize=(20, 10))
     data_frame['Churn'].hist()
-    plt.savefig("./images/results/churn_histogram.png")
+    plt.savefig("./images/eda/churn_histogram.png")
     logging.info("%s : %s", "perform_eda: churn histogram", "SUCCESS")
 
     # Plot a Customer_Age histogram.
     plt.figure(figsize=(20, 10))
     data_frame['Customer_Age'].hist()
-    plt.savefig("./images/results/customer_age_histogram.png")
+    plt.savefig("./images/eda/customer_age_histogram.png")
     logging.info("%s : %s", "perform_eda: customer_age histogram", "SUCCESS")
 
     # Plot the marital status counts.
     plt.figure(figsize=(20, 10))
     data_frame.Marital_Status.value_counts('normalize').plot(kind='bar')
-    plt.savefig("./images/results/marital_status_counts.png")
+    plt.savefig("./images/eda/marital_status_counts.png")
     logging.info(
         "%s : %s",
         "perform_eda: plot marital status counts",
@@ -92,7 +96,7 @@ def perform_eda(data_frame):
     # Plot the total transaction histogram.
     plt.figure(figsize=(20, 10))
     sns.histplot(data_frame['Total_Trans_Ct'], stat='density', kde=True)
-    plt.savefig("./images/results/total_transaction_histogram.png")
+    plt.savefig("./images/eda/total_transaction_histogram.png")
     logging.info(
         "%s : %s",
         "perform_eda: plot total transaction histogram",
@@ -101,7 +105,7 @@ def perform_eda(data_frame):
     # Plot the heat map.
     plt.figure(figsize=(20, 10))
     sns.heatmap(data_frame.corr(), annot=False, cmap='Dark2_r', linewidths=2)
-    plt.savefig("./images/results/heatmap.png")
+    plt.savefig("./images/eda/heatmap.png")
     logging.info("%s : %s", "perform_eda: plot heatmap", "SUCCESS")
 
 
@@ -361,6 +365,32 @@ def train_models(x_train, x_test, y_train, y_test):
         x_train,
         './images/results/cv_feature_importance.png')
 
+    # Plot and save the ROC curves.    
+    logging.info(
+        "%s : %s",
+        "model_train: save roc curve",
+        "BEGIN")
+    lrc_plot = plot_roc_curve(lrc, x_test, y_test)
+    # fpr, tpr, _ = roc_curve(y_test, y_test_preds_lr)
+    # roc_display = RocCurveDisplay(fpr=fpr, tpr=tpr).plot()
+    plt.savefig("./images/results/lrc_roc_curve.png")
+    logging.info(
+        "%s : %s",
+        "model_train: save lrc roc curve",
+        "SUCCESS")
+    # Combine both lrc ans rfc roc plots
+    plt.clf()
+    plt.close()
+    plt.figure(figsize=(15, 8))
+    ax = plt.gca()
+    rfc_disp = plot_roc_curve(cv_rfc.best_estimator_, x_test, y_test, ax=ax, alpha=0.8)
+    lrc_plot.plot(ax=ax, alpha=0.8)
+    plt.savefig("./images/results/lrc_rfc_roc_curves.png")
+    logging.info(
+        "%s : %s",
+        "model_train: save lrc and rfc roc curves",
+        "SUCCESS")
+    
 
 if __name__ == "__main__":
     main_data_frame = import_data('./data/bank_data.csv')
